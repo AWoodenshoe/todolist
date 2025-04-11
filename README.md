@@ -4,5 +4,5 @@ The base of the code is from [this tutorial](https://www.youtube.com/watch?v=Cgk
 I added more of my own code.
 
 ## Version 1.1
-Started project
-Added progress bar with basic effects
+- Started project
+- Added progress bar with basic effects
