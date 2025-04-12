@@ -1,8 +1,18 @@
 # To do list app
-My version of the classic to-do-list app that every beginner does to test things out.
-The base of the code is from [this tutorial](https://www.youtube.com/watch?v=CgkZ7MvWUAA). <br />
-I added more of my own code.
+A simple and fun to-do list app built with React. You can add tasks, mark them as done, and give them a priority that changes how they glow on hover. Animations are handled with Framer Motion, and styles are kept tidy using CSS Modules. Just a clean little project to practice modern front-end skills!
 
-## Version 1.1
-- Started project
-- Added progress bar with basic effects
+## 📦 Version Log
+
+### v1.2.0 – Priority Glow (Apr 11, 2025)
+- Added task priority selection (Low, Medium, High)
+- Priority-based hover glow effect using dynamic CSS Modules
+- Dropdown includes placeholder "Select priority" option
+- Refactored list item styling for scoped class support
+
+### v1.1.0 – Motion + UI Polish
+- Integrated Framer Motion for list item animations
+- Tasks lift slightly on hover with smooth transition
+
+### v1.0.0 – Core Features
+- Add, remove, and complete tasks
+- Completed tasks move to separate section with strike-through
