@@ -14,10 +14,10 @@ A polished React to-do list app with smooth animations, priority-based task styl
 - Dropdown includes placeholder "Select priority" option
 - Refactored list item styling for scoped class support
 
-### v1.1.0 – Motion + UI Polish
+### v1.1.0 – Motion + UI Polish (Apr 11, 2025)
 - Integrated Framer Motion for list item animations
 - Tasks lift slightly on hover with smooth transition
 
-### v1.0.0 – Core Features
+### v1.0.0 – Core Features (Apr 10, 2025)
 - Add, remove, and complete tasks
 - Completed tasks move to separate section with strike-through
