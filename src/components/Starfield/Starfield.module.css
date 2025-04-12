@@ -1,0 +1,43 @@
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -3;
+    overflow: hidden;
+  }
+  
+  .particleWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+  }
+  
+  .particle {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transform-origin: top;
+    animation-name: radiate;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+  }
+  
+  @keyframes radiate {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-400px) scale(1.2);
+      opacity: 0;
+    }
+  }
+  

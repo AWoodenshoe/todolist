@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.toDoList {
+    text-align: center;
+    margin: 100px auto 0;
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 4rem;
+    color: white;
+}
+
+button {
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.addButton {
+    background-color: hsl(125, 47%, 55%);
+
+}
+
+.addButton:hover {
+    background-color: hsl(125, 47%, 45%);
+}
+
+.deleteButton {
+    background-color: hsl(10, 90%, 50%);
+}
+
+.deleteButton:hover {
+    background-color: hsl(10, 90%, 45%);
+}
+
+.moveButton {
+    background-color: hsl(207, 90%, 65%);
+}
+
+.moveButton:hover {
+    background-color: hsl(207, 90%, 55%);
+}
+
+.inputWrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputTask {
+    display: flex;
+}
+
+input[type="text"] {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.6rem;
+    padding: 10px;
+    border: 2px solid hsla(0, 0%, 70%, 0.5);
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: hsla(0, 0%, 0%, 0.5);
+    width: 365px;
+    outline: none;
+}
+
+.select {
+    font-family: "Rubik", sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border: 2px solid hsla(0, 0%, 70%, 0.5);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ol {
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    font-size: 2rem;
+    padding: 15px;
+    background-color: hsla(0, 0%, 100%, 95%);
+    margin-bottom: 20px;
+    border: 3px solid hsla(0, 0%, 70%, 0.5);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.task:hover {
+    transform: translateY(-5px);
+}
+
+.task.high:hover {
+    box-shadow: 0 0 30px rgba(255, 50, 50, 0.6);
+}
+
+.task.medium:hover {
+    box-shadow: 0 0 30px rgba(255, 165, 0, 0.5);
+}
+
+.task.low:hover {
+    box-shadow: 0 0 30px rgba(0, 200, 0, 0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}  
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+  
+
+.text {
+    flex: 1;
+    cursor: pointer;
+}
+
+.deleteButton,
+.moveButton {
+    padding: 6px 6px;
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.deleteButton {
+    padding: 8px 8px;
+}

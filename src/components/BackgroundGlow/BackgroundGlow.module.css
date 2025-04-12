@@ -1,0 +1,30 @@
+.glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -2;
+    background: radial-gradient(
+      circle at center,
+      rgba(97, 218, 251, 0.4),
+      transparent 60%
+    );
+    filter: blur(150px);
+    animation: pulse 6s ease-in-out infinite;
+}
+  
+@keyframes pulse {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.75;
+      transform: scale(1.15);
+    }
+}
+  
+  
+  

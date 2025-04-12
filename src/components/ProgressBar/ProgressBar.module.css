@@ -1,0 +1,47 @@
+.progressBar {
+    width: 100%;
+    height: 35px;
+    background-color: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+    display: flex;
+}
+
+.progressFill {
+    height: 100%;
+    width: var(--progress);
+    background: linear-gradient(
+        270deg,
+        var(--fill-color),
+        var(--pair-color),
+        var(--fill-color)
+    );
+    background-size: 1000% 1000%;
+    animation: breatheGradient 10s ease-in-out infinite;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    color: black;
+    font-weight: bold;
+
+    
+}
+
+@keyframes breatheGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.progressText {
+    padding: 10px;
+}
