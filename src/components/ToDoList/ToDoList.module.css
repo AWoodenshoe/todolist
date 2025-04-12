@@ -23,12 +23,13 @@ button {
 }
 
 .addButton {
-    background-color: hsl(125, 47%, 55%);
+    background-color: hsl(125, 47%, 50%);
+    width: 20%;
 
 }
 
 .addButton:hover {
-    background-color: hsl(125, 47%, 45%);
+    background-color: hsl(125, 47%, 43%);
 }
 
 .deleteButton {
@@ -48,24 +49,28 @@ button {
 }
 
 .inputWrapper {
+    box-sizing: border-box;
+    max-width: 100%;
     display: flex;
     gap: 1rem;
 }
 
 .inputTask {
     display: flex;
+    width: 80%;
 }
 
 input[type="text"] {
     font-family: "Rubik", sans-serif;
     font-size: 1.6rem;
     padding: 10px;
-    border: 2px solid hsla(0, 0%, 70%, 0.5);
+    border: 3px solid hsla(0, 0%, 60%, 0.5);
+    border-right: none;
     border-radius: 5px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     color: hsla(0, 0%, 0%, 0.5);
-    width: 365px;
+    width: 75%;
     outline: none;
 }
 
@@ -73,9 +78,10 @@ input[type="text"] {
     font-family: "Rubik", sans-serif;
     font-size: 1rem;
     padding: 10px;
-    border: 2px solid hsla(0, 0%, 70%, 0.5);
+    border: 3px solid hsla(0, 0%, 60%, 0.5);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    width: 25%;
 }
 
 ol {
@@ -133,8 +139,4 @@ li {
     padding: 6px 6px;
     font-size: 1.4rem;
     margin-left: 10px;
-}
-
-.deleteButton {
-    padding: 8px 8px;
 }

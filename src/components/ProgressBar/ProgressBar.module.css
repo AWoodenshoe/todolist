@@ -4,7 +4,7 @@
     background-color: #ddd;
     border-radius: 20px;
     overflow: hidden;
-    margin: 20px 0;
+    margin: 20px 0 0;
     display: flex;
 }
 
@@ -26,8 +26,7 @@
     border-radius: 10px 0 0 10px;
     color: black;
     font-weight: bold;
-
-    
+    position: relative;
 }
 
 @keyframes breatheGradient {
@@ -45,3 +44,29 @@
 .progressText {
     padding: 10px;
 }
+
+.taskSummary {
+    font-weight: 400;
+    padding: 20px 0 40px;
+    line-height: 0;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem
+}
+
+.monospace {
+    font-variant-numeric: tabular-nums;
+}
+
+.runner {
+    position: absolute;
+    right: -1.6em; /* or tweak this value to get it outside the bar slightly */
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1); /* Flip and center vertically */
+    font-size: 1.5rem; /* Optional: make him more visible */
+    pointer-events: none; /* Avoid weird hover/click behavior */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+  

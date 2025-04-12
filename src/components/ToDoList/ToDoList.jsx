@@ -25,13 +25,13 @@ function ToDoList() {
         }
     }
 
-    function deleteTask(index) {
-        const updatedTasks = tasks.filter((_, i) => i !== index);
-        setTasks(updatedTasks); 
+    function deleteTask(id) {
+        setTasks(t => t.filter(task => task.id !== id)); 
         setId(i => i - 1);
     }
 
-    function moveTaskUp(index) {
+    function moveTaskUp(id) {
+        const index = tasks.findIndex(task => task.id === id);
         if(index > 0) {
             const updatedTasks = [...tasks];
             [updatedTasks[index], updatedTasks[index - 1]] = [updatedTasks[index - 1], updatedTasks[index]];
@@ -39,7 +39,8 @@ function ToDoList() {
         }
     }
 
-    function moveTaskDown(index) {
+    function moveTaskDown(id) {
+        const index = tasks.findIndex(task => task.id === id);
         if(index < tasks.length - 1) {
             const updatedTasks = [...tasks];
             [updatedTasks[index], updatedTasks[index + 1]] = [updatedTasks[index + 1], updatedTasks[index]];
@@ -47,23 +48,24 @@ function ToDoList() {
         }
     }
 
-    function toggleComplete(index) {
+    function toggleComplete(id) {
         setTasks(tasks => tasks.map((task, i) =>
-            i === index ? { ...task, completed: !task.completed } : task
+            task.id === id ? { ...task, completed: !task.completed } : task
         ));
-    
-        if (!tasks[index].completed) {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
+        
+        const taskToCheck = tasks.find(task => task.id === id);
+
+        if (taskToCheck && !taskToCheck.completed) {
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
         }
     }
 
     const totalTasks = tasks.length;
     const completedTasks = tasks.filter(task => task.completed).length;
-    const progress = totalTasks === 0 ? 0 : (completedTasks / totalTasks) * 100;
 
     function handlePriorityChange(event) {
         setPriority(event.target.value);
@@ -72,7 +74,7 @@ function ToDoList() {
     return(
     <div className={styles.toDoList}>
         <h1>To-Do-List</h1>
-        <ProgressBar progress={progress} />
+        <ProgressBar totalTasks={totalTasks} completedTasks={completedTasks}/>
 
         <div className={styles.inputWrapper}>
             <div className={styles.inputTask}>
@@ -82,7 +84,6 @@ function ToDoList() {
                     value={newTask}
                     onChange={handleInputChange}/>
                 <select required className={styles.select} value={priority} onChange={handlePriorityChange}>
-                    <option value="" disabled>Select priority</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
@@ -96,16 +97,16 @@ function ToDoList() {
         </div>
 
         <ol>
-            {tasks.map((task, index) => 
-                <motion.li key={index} className={`${styles.task} ${styles[task.priority]}`} layout transition={{type: "tween", ease:"easeInOut", duration: 0.4}}>
+            {tasks.map(task => 
+                <motion.li key={task.id} className={`${styles.task} ${styles[task.priority]}`} layout transition={{type: "tween", ease:"easeInOut", duration: 0.4}}>
                         <span 
                             className={`${styles.text} ${task.completed ? styles.completed : ''}`} 
-                            onClick={() => toggleComplete(index)}>
+                            onClick={() => toggleComplete(task.id)}>
                             {task.text}
                         </span>
-                        <button className={styles.deleteButton} onClick={() => deleteTask(index)}>Delete</button>
-                        <button className={styles.moveButton} onClick={() => moveTaskUp(index)}>☝️</button>
-                        <button className={styles.moveButton} onClick={() => moveTaskDown(index)}>👇</button>
+                        <button className={styles.deleteButton} onClick={() => deleteTask(task.id)}>🗑️</button>
+                        <button className={styles.moveButton} onClick={() => moveTaskUp(task.id)}>☝️</button>
+                        <button className={styles.moveButton} onClick={() => moveTaskDown(task.id)}>👇</button>
                 </motion.li>
             )}
         </ol>
