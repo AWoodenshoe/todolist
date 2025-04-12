@@ -1,12 +1,23 @@
-# React + Vite
+# To-Do List app
+A polished React to-do list app with smooth animations, priority-based task styling, and a collapsible corner badge that displays the time and adds a bit of fun with confetti and UI flair. 📝✅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📦 Version Log
 
-Currently, two official plugins are available:
+### v1.3.0 - Corner Badge (April 12, 2025)
+- Added a collapsible CornerBadge component with smooth horizontal expansion
+- Toggle button (⯈ / ⯇) to switch between collapsed and expanded states
+- 🎉 Confetti trigger button included directly in the badge for extra fun
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### v1.2.0 – Priority Glow (Apr 11, 2025)
+- Added task priority selection (Low, Medium, High)
+- Priority-based hover glow effect using dynamic CSS Modules
+- Dropdown includes placeholder "Select priority" option
+- Refactored list item styling for scoped class support
 
-## Expanding the ESLint configuration
+### v1.1.0 – Motion + UI Polish
+- Integrated Framer Motion for list item animations
+- Tasks lift slightly on hover with smooth transition
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### v1.0.0 – Core Features
+- Add, remove, and complete tasks
+- Completed tasks move to separate section with strike-through
