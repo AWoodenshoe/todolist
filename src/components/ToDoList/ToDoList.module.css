@@ -102,10 +102,6 @@ li {
     animation: fadeIn 0.3s ease forwards;
 }
 
-.task:hover {
-    transform: translateY(-5px);
-}
-
 .task.high:hover {
     box-shadow: 0 0 30px rgba(255, 50, 50, 0.6);
 }

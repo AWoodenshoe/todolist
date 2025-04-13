@@ -1,33 +1,15 @@
 import { useState, useEffect } from 'react';
 import styles from './CornerBadge.module.css';
 import confetti from 'canvas-confetti';
-
+import DigitalClock from "../DigitalClock/DigitalClock.jsx";
 
 function CornerBadge() {
 
-    const [currentTime, setCurrentTime] = useState(new Date());
     const [isCollapsed, setIsCollapsed] = useState(false);
 
     function toggleCollapse() {
         setIsCollapsed(prev => !prev);
       }
-
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCurrentTime(new Date());
-      }, 1000);
-      return () => clearInterval(interval); // Cleanup
-    }, []);
-
-    const formattedTime = currentTime.toLocaleTimeString(undefined, {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-      });
-
-    const today = new Date();
-    const options = { weekday: 'long', month: 'short', day: 'numeric' };
-    const formattedDate = today.toLocaleDateString(undefined, options);
     
     function triggerConfettiRain() {
 
@@ -50,15 +32,31 @@ function CornerBadge() {
 
     return(
         <div className={`${styles.badgeContainer} ${isCollapsed ? styles.collapsed : styles.expanded}`}>
+            <button onClick={toggleCollapse} className={styles.toggleButton}>
+            <svg
+  className={`${styles.arrowIcon} ${!isCollapsed ? styles.rotated : ''}`}
+  viewBox="0 0 24 24"
+  width="20"
+  height="20"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M9 6l6 6-6 6"
+    fill="none"
+    stroke="white"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
+</button>
+
             {isCollapsed ? (
-                <button onClick={toggleCollapse} className={styles.toggleButton}>⯈</button>
+                ""
             ) : (
                 <div className={styles.expandedContainer}>
-                    <button onClick={toggleCollapse} className={styles.toggleButton}>⯇</button>
-                    <p>
-                        <span className={styles.monospace}>⌛{formattedTime}</span>
-                        <button onClick={triggerConfettiRain} className={styles.confettiButton}>🎉</button>
-                    </p>
+                    <DigitalClock />
+                    <button onClick={triggerConfettiRain} className={styles.confettiButton}>🎉</button>
                 </div>
             )}
         </div>

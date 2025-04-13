@@ -73,7 +73,7 @@ function ToDoList() {
 
     return(
     <div className={styles.toDoList}>
-        <h1>To-Do-List</h1>
+        <h1>To-Do List</h1>
         <ProgressBar totalTasks={totalTasks} completedTasks={completedTasks}/>
 
         <div className={styles.inputWrapper}>
@@ -98,7 +98,7 @@ function ToDoList() {
 
         <ol>
             {tasks.map(task => 
-                <motion.li key={task.id} className={`${styles.task} ${styles[task.priority]}`} layout transition={{type: "tween", ease:"easeInOut", duration: 0.4}}>
+                <motion.li key={task.id} className={`${styles.task} ${styles[task.priority]}`} layout transition={{type: "tween", ease:"easeInOut", duration: 0.15}} whileHover={{ y: -5}}>
                         <span 
                             className={`${styles.text} ${task.completed ? styles.completed : ''}`} 
                             onClick={() => toggleComplete(task.id)}>
