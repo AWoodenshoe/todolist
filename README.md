@@ -1,6 +1,10 @@
 # To-Do List app
 A polished React to-do list app with smooth animations, priority-based task styling, and a collapsible corner badge that displays the time and adds a bit of fun with confetti and UI flair. 📝✅
 
+## 📷 Screenshots 
+This is what it looks like :D
+![image](https://github.com/user-attachments/assets/ff5242d0-6d28-4842-870e-403989a8c3f9)
+
 ## 📦 Version Log
 
 ### v1.3.0 - Corner Badge (April 12, 2025)
